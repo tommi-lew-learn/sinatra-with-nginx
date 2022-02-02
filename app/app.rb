@@ -1,5 +1,5 @@
 require 'sinatra'
 
-get '/' do
+get '/api/heartbeat' do
   'Pong'
 end
