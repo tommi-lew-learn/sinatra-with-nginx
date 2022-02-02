@@ -27,8 +27,8 @@ jobs:
 
     - name: Build and push Nginx (web)
       working-directory: ./web
-      run: docker buildx build . --platform linux/x86_64 --file Dockerfile --tag tommilew/sinatra-with-nginx:${{ steps.date_time.outputs.date }} --push
+      run: docker buildx build . --platform linux/x86_64 --file Dockerfile --tag tommilew/sinatra-with-nginx-web:${{ steps.date_time.outputs.date }} --push
     
     - name: Build and push Sinatra (app)
       working-directory: ./app
-      run: docker buildx build . --platform linux/x86_64 --file Dockerfile --tag tommilew/sinatra-with-nginx:${{ steps.date_time.outputs.date }} --push
+      run: docker buildx build . --platform linux/x86_64 --file Dockerfile --tag tommilew/sinatra-with-nginx-app:${{ steps.date_time.outputs.date }} --push
