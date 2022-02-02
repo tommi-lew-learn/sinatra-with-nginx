@@ -26,7 +26,7 @@ jobs:
         password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
     - name: Build and push Nginx (web)
-      run: docker buildx build . --platform linux/x86_64 --file nginx/web.Dockerfile --tag tommilew/sinatra-with-nginx:${{ steps.date_time.outputs.date }} --push
+      run: docker buildx build . --platform linux/x86_64 --file web/Dockerfile --tag tommilew/sinatra-with-nginx:${{ steps.date_time.outputs.date }} --push
     
     - name: Build and push Sinatra (app)
-      run: docker buildx build . --platform linux/x86_64 --file app.Dockerfile --tag tommilew/sinatra-with-nginx:${{ steps.date_time.outputs.date }} --push
+      run: docker buildx build . --platform linux/x86_64 --file app/Dockerfile --tag tommilew/sinatra-with-nginx:${{ steps.date_time.outputs.date }} --push
