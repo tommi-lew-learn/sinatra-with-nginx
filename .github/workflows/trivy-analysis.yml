@@ -29,6 +29,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build an image from Dockerfile
+        working-directory: ./app
         run: |
           docker buildx build . --platform linux/x86_64 --file ./app/Dockerfile --tag tommilew/sinatra-with-nginx-app:${{ github.sha }}
 
