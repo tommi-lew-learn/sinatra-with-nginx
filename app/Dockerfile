@@ -1,4 +1,4 @@
-FROM ruby:3.1.0-alpine
+FROM ruby:3-alpine
 
 # Resolve CVE-2021-43618 for alpine 3.15.0
 RUN apk update --no-cache libgmpxx gmp-dev gmp
